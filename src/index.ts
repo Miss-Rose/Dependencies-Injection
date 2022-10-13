@@ -4,7 +4,6 @@ import {createIoCContainer} from "./ioc";
 const ioc = createIoCContainer();
 
 const renderUsers = async (config: ApiConfig) => {
-  const ioc = createIoCContainer();
   ioc.register('apiConfig', {...config});
   const usersService = ioc.resolve('users');
   const users = await usersService.getUsers();
